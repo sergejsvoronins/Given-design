@@ -1,0 +1,7 @@
+@use "library" as l;
+
+@mixin desktop {
+    @media screen and (min-width: l.$desktop) {
+        @content;
+    }
+}
