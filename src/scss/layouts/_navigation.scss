@@ -1,0 +1,105 @@
+@use "./../base/reset";
+@use "./../library/mixins" as m;
+
+
+nav {
+    .hamburger__icon{
+        position: absolute;
+        z-index: 5;
+        right: 15px;
+        top: 7px; 
+        &:hover {
+            cursor: pointer;
+        }
+        div {
+            position: relative;
+            width: 25px;                
+            height: 4px;
+            border-radius: 3px;
+            background-color: white;
+            margin-top: 5px;
+            transition: all 0.2s ease-in-out;
+        }
+        @include m.desktop{
+            display: none;
+        }
+    }
+    #toggle {
+    display: none;
+    
+    &:checked + .hamburger__icon .hamburger__icon__top-bun {
+        transform: rotate(135deg);
+        background-color: white;
+        margin-top: 12px;   
+    }
+    &:checked + .hamburger__icon .hamburger__icon__meat {
+        opacity: 0;
+        transform: rotate(45deg);
+    }
+    &:checked + .hamburger__icon .hamburger__icon__bottom-bun {
+        transform: rotate(-135deg);
+        background-color: white;
+        margin-top: -13px;
+    }
+        
+    &:checked  + .hamburger__icon + .menu{
+        transform: scale(1);
+        top: 0;
+    }
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: fixed;
+        width: 100%;
+        padding-top: 60px;
+        transition: all 0.2s ease-in-out;
+        transform: scale(0);
+        @include m.desktop {
+            position: absolute;
+            top: 0;
+            transform: scale(1);
+            padding: 0;
+            justify-content: end;
+            align-items: center;
+        }
+        &__bg{
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            opacity: 0.2;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding-bottom: 4px;
+            @include m.desktop{
+                flex-direction: row;
+                margin-right: 20px;
+            }
+            li{
+                text-align: center;
+                @include m.desktop{
+                    margin: 10px 15px;
+                }
+                a{
+                    color: white;
+                    text-decoration: none;
+                    letter-spacing: 1px;
+                    @include m.desktop{
+                        &:hover{
+                            border-bottom: 1.5px solid white;
+                        }
+                    }
+                }
+            }
+        }
+       
+    }
+
+}

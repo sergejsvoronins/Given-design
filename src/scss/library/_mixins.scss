@@ -1,0 +1,22 @@
+
+@use "./../library/variables" as m;
+
+@mixin desktop {
+    @media screen and (min-width: m.$desktop) {
+        @content;
+    }
+}
+
+@mixin scroll-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    a{
+        i{
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+    
+}
