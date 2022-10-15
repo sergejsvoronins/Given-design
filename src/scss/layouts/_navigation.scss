@@ -51,14 +51,13 @@ nav {
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        position: fixed;
+        position: absolute;
+        top: 0;
         width: 100%;
         padding-top: 60px;
         transition: all 0.2s ease-in-out;
         transform: scale(0);
         @include m.desktop {
-            position: absolute;
-            top: 0;
             transform: scale(1);
             padding: 0;
             justify-content: end;
