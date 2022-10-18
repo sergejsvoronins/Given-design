@@ -3,7 +3,7 @@
 
 
 nav {
-    .hamburger__icon{
+    .hamburgerIcon{
         position: absolute;
         z-index: 5;
         right: 15px;
@@ -27,22 +27,22 @@ nav {
     #toggle {
     display: none;
     
-    &:checked + .hamburger__icon .hamburger__icon__top-bun {
+    &:checked + .hamburgerIcon .hamburgerIcon__top-bun {
         transform: rotate(135deg);
         background-color: white;
         margin-top: 12px;   
     }
-    &:checked + .hamburger__icon .hamburger__icon__meat {
+    &:checked + .hamburgerIcon .hamburgerIcon__meat {
         opacity: 0;
         transform: rotate(45deg);
     }
-    &:checked + .hamburger__icon .hamburger__icon__bottom-bun {
+    &:checked + .hamburgerIcon .hamburgerIcon__bottom-bun {
         transform: rotate(-135deg);
         background-color: white;
         margin-top: -13px;
     }
         
-    &:checked  + .hamburger__icon + .menu{
+    &:checked  + .hamburgerIcon + .menu{
         transform: scale(1);
         top: 0;
     }
@@ -55,7 +55,7 @@ nav {
         top: 0;
         width: 100%;
         padding-top: 60px;
-        transition: all 0.2s ease-in-out;
+        transition: transform 0.05s ease-in-out;
         transform: scale(0);
         @include m.desktop {
             transform: scale(1);
@@ -89,10 +89,9 @@ nav {
                 a{
                     color: white;
                     text-decoration: none;
-                    letter-spacing: 1px;
                     @include m.desktop{
                         &:hover{
-                            border-bottom: 1.5px solid white;
+                            text-decoration: underline;
                         }
                     }
                 }

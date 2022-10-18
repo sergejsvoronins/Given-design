@@ -17,6 +17,7 @@ main {
     .title{
         width: 100%;
         text-align: center;
+        margin-bottom: 10px;
         h2 {
             color: black;
             padding: 30px 0;
@@ -29,7 +30,7 @@ main {
         flex-direction: column;
         align-items: center;
         width: 80%;
-        gap: 5px;
+        gap: 10px;
         @include m.desktop{
             width: 50%;
             *{
@@ -43,7 +44,7 @@ main {
         &__img{
             width: 80%;
             @include m.desktop{
-                width: 50%;
+                width: 40%;
                 gap: 0;
             }
             img{
@@ -55,22 +56,25 @@ main {
         &__quote{
             display: flex;
             align-items: center;
-            padding: 30px 50px;
+            padding: 30px 35px;
             background-color: lightgray;
-            border-radius: 10px;
+            border-radius: 5px;
             @include m.desktop{
                 max-width: 70%;   
             }
             &__logo{
                 i {
-                    font-size: 30px;
+                    font-size: 40px;
                 }
+            }
+            & p{
+                font-size: 16px;
             }
            
         }
     }
-    .scroll-btn{
-        @include m.scroll-btn;
+    .scrollBtn{
+        @include m.scrollBtn;
     }
 
 }
